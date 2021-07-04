@@ -5,16 +5,53 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Password cracker</title>
+  <style>
+    body {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      padding: 20px;
+    }
+    label {
+      display: block;
+      padding: 10px;
+    }
+    .btn {
+      color:cornsilk;
+      background-color: #4CAF50; /* Green */
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+    .field {
+      display: inline-block;
+      font-size: 16px;
+      padding: 15px 32px;
+    }
+    p {
+      border: 2px solid black;
+      height: 50px;
+      background-color: blueviolet;
+      color: burlywood;
+
+    }
+
+  </style>
 </head>
 <body>
   <h1>Wellcome to password cracker</h1>
   <form>
-    <label for="password">Inter your password here</label>
-    <input type="password" name="password">
-    <input type="button" value="submit">
+    <label for="password">Enter your password here</label>
+    <br>
+    <input type="password" name="password" class="field">
+    <input type="button" value="submit" class="btn">
   </form>
   <div>
-    <h2>The password you entered is <span></span></h2>
+    <h2>The password you entered is</h2>
+    <p></p>
   </div>
 </body>
 </html>
