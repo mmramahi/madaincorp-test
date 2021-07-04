@@ -46,12 +46,58 @@
   <form>
     <label for="password">Enter your password here</label>
     <br>
-    <input type="password" name="password" class="field">
-    <input type="button" value="submit" class="btn">
+    <input type="password" name="password" class="field" id="psw">
+    <input type="button" value="submit" class="btn" onclick="getPassword()">
   </form>
   <div>
     <h2>The password you entered is</h2>
-    <p></p>
+    <p id="gussed"></p>
   </div>
+  <script>
+    
+    let alpha = "abcdefghijclmnopqrstuvwxyz";
+    alpha = alpha.split("");
+    
+    let ALPHA = "ABCDEFGHIJCLMNOPQRSTUVWXYZ";
+    ALPHA = ALPHA.split("");
+
+    let num = [1,2,3,4,5,6,7,8,9," ", "%", "$"];
+    
+
+    let gussedPWS = [];
+
+    function getPassword  () {
+      let password =document.getElementById("psw").value;
+      password = password.split("");
+      for (var i = 0; i < password.length; i++) {
+        for (var j = 0; j < alpha.length; j++) {
+          if (compare(password[i], alpha[j])){
+            gussedPWS.push(alpha[j]);
+          }else if(compare(password[i], ALPHA[j])) {
+            gussedPWS.push(ALPHA[j]);
+          }else {
+            for (var j = 0; j < num.length; j++) {
+              if(compare(password[i], num[j])) {
+              gussedPWS.push(num[j]);
+            }else{
+              gussedPWS.push("X");
+            }
+          }
+        }
+      }
+    }
+    
+    document.getElementById("gussed").innerHTML= gussedPWS.join("");
+
+  }
+
+    function compare(a, b) {
+      return a === b;
+    }
+
+
+    
+    
+  </script>
 </body>
 </html>
